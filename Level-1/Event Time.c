@@ -16,6 +16,43 @@ Z segundo(s)
 Obs: Consider that the event of the test case have the minimum duration of one minute. “dia” means day, “hora” means hour, “minuto” means minute and “Segundo” means second in Portuguese.
 */
 
+#include <stdio.h>
+
+int main() {
+    int d1, h1, m1, s1;
+    int d2, h2, m2, s2;
+    char dummy[5];
+
+    scanf("%s %d", dummy, &d1);
+    scanf("%d %*c %d %*c %d", &h1, &m1, &s1);
+    
+    scanf("%s %d", dummy, &d2);        
+    scanf("%d %*c %d %*c %d", &h2, &m2, &s2); 
+
+    int start = d1*86400 + h1*3600 + m1*60 + s1;
+    int end   = d2*86400 + h2*3600 + m2*60 + s2;
+
+    int diff = end - start;
+
+    int days = diff / 86400;
+    diff %= 86400;
+
+    int hours = diff / 3600;
+    diff %= 3600;
+
+    int mins = diff / 60;
+    int secs = diff % 60;
+
+    printf("%d dia(s)\n", days);
+    printf("%d hora(s)\n", hours);
+    printf("%d minuto(s)\n", mins);
+    printf("%d segundo(s)\n", secs);
+
+    return 0;
+}
+
+
+
 
 
 
