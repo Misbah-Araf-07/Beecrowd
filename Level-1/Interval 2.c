@@ -17,3 +17,4 @@ For each test case, print how many numbers are in and how many values are out of
 */
 
 
+.
