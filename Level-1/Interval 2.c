@@ -18,7 +18,30 @@ For each test case, print how many numbers are in and how many values are out of
 
 
 
+#include <stdio.h>
+
+int main()
+{
+
+    int N,X;
+    scanf("%d",&N);
+
+    int t, counter;
+    counter = 0;
+
+    for (t=0; t<N ; t++ )
+    {
+        scanf("%d",&X);
+        if (X>=10 && X<=20) counter++;
 
 
 
-.
+    }
+
+    int anti = N - counter;
+
+    printf ("%d in\n%d out\n", counter, anti);
+    return 0;
+}
+
+
