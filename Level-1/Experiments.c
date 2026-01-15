@@ -14,3 +14,32 @@ Output
 
 Print the total of animals used, the total of each type of animal and the percentual of each one in relation of the total of animals used. The percentual must be printed with 2 digits after the decimal point.
 */
+
+#include <stdio.h>
+
+int main()
+{
+    int N, D, t;
+    char C;
+    int X = 0, ac = 0, ar = 0, as = 0;
+    scanf("%d", &N);
+    for (t = 1; t <= N; t++)
+    {
+        scanf("%d", &D);
+        scanf(" %c", &C);
+        
+        X += D;
+        if (C == 'C') ac += D;
+        else if (C == 'R') ar += D;
+        else if (C == 'S') as += D;
+    }
+
+    printf("Total: %d cobaias\n", X);
+    printf("Total de coelhos: %d\n", ac);
+    printf("Total de ratos: %d\n", ar);
+    printf("Total de sapos: %d\n", as);
+    printf("Percentual de coelhos: %.2lf %%\n", ((double)ac / (double)X) * 100);
+    printf("Percentual de ratos: %.2lf %%\n", ((double)ar / (double)X) * 100);
+    printf("Percentual de sapos: %.2lf %%\n", ((double)as / (double)X) * 100);
+    return 0;
+}
