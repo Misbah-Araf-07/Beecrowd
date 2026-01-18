@@ -17,22 +17,19 @@ Make a program that prints the sequence like the following example.
 
 */
 
-
 #include <stdio.h>
 
 int main()
 {   
-    int t, counter=0;
-    double I=0, J=1;
-    double J_og= J;
+    int t, k;
+    double I, J;
 
     for (t=0; t<=10; t++)
     {
         I = t * 0.2;
-        J = J_og + I;
-        counter = 0;
-
-        while (counter < 3)
+        J = 1 + I;
+        
+        for (k=0; k<3; k++)
         {
             if ( I==0 || I==1 || I==2 )
                 printf("I=%0.lf ", I);
@@ -45,7 +42,6 @@ int main()
                 printf("J=%.1lf\n", J);
 
             J++;
-            counter++;
         }
     }
     return 0;
